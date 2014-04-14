@@ -1,0 +1,1 @@
+This is the code we used to simply test our programmer by flashing or turning on some LEDs

@@ -1,0 +1,1 @@
+"./cc430x513x_adc12_06.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 

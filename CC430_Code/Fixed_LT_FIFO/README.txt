@@ -1,0 +1,1 @@
+This is the sample code I used to test the wireless antenna. I only changed the port used for the push button (this is actually the dip switch that is farthest from the antenna) and the LEDs to display when something in the RX buffer is recieved.

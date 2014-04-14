@@ -1,0 +1,1 @@
+This is the code that I used to test the UART throught the mini usb.
