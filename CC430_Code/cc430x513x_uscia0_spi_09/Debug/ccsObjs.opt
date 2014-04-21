@@ -1,0 +1,1 @@
+"./cc430x513x_uscia0_spi_09.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 

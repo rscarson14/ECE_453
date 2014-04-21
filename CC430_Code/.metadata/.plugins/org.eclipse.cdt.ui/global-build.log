@@ -937,3 +937,64 @@ remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
 ' '
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project cc430x513x_uscia0_spi_09 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../cc430x513x_uscia0_spi_09.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_uscia0_spi_09.pp"  "../cc430x513x_uscia0_spi_09.c"
+"../cc430x513x_uscia0_spi_09.c", line 112: error #20: identifier "UCB0MCTL" is undefined
+"../cc430x513x_uscia0_spi_09.c", line 124: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_uscia0_spi_09.c", line 119: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../cc430x513x_uscia0_spi_09.c", line 137: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+
+"../cc430x513x_uscia0_spi_09.c", line 148: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+>> Compilation failure
+1 error detected in the compilation of "../cc430x513x_uscia0_spi_09.c".
+gmake: *** [cc430x513x_uscia0_spi_09.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project cc430x513x_uscia0_spi_09 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../cc430x513x_uscia0_spi_09.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_uscia0_spi_09.pp"  "../cc430x513x_uscia0_spi_09.c"
+"../cc430x513x_uscia0_spi_09.c", line 112: error #20: identifier "UCB1MCTL" is undefined
+"../cc430x513x_uscia0_spi_09.c", line 124: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_uscia0_spi_09.c", line 119: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../cc430x513x_uscia0_spi_09.c", line 137: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+
+"../cc430x513x_uscia0_spi_09.c", line 148: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+>> Compilation failure
+1 error detected in the compilation of "../cc430x513x_uscia0_spi_09.c".
+gmake: *** [cc430x513x_uscia0_spi_09.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project cc430x513x_uscia0_spi_09 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../cc430x513x_uscia0_spi_09.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_uscia0_spi_09.pp"  "../cc430x513x_uscia0_spi_09.c"
+"../cc430x513x_uscia0_spi_09.c", line 124: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_uscia0_spi_09.c", line 119: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../cc430x513x_uscia0_spi_09.c", line 137: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_uscia0_spi_09.c", line 148: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../cc430x513x_uscia0_spi_09.c'
+' '
+'Building target: cc430x513x_uscia0_spi_09.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z -m"cc430x513x_uscia0_spi_09.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="cc430x513x_uscia0_spi_09_linkInfo.xml" --rom_model -o "cc430x513x_uscia0_spi_09.out"  "./cc430x513x_uscia0_spi_09.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: cc430x513x_uscia0_spi_09.out'
+' '
+
+**** Build Finished ****
