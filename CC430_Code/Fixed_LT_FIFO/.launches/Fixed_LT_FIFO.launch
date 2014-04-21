@@ -5,7 +5,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.TI MSP430 USB1/MSP430" value="${build_artifact:Fixed_LT_FIFO}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.TI MSP430 USB1/MSP430" value="Fixed_LT_FIFO"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:Fixed_LT_FIFO}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TI MSP430 USB1/MSP430" value="C:/Users\Greg\Desktop\SLAA465 - CC430 RF Examples\CC430x513x RF examples\RF_Examples_CCS\Fixed_LT_FIFO\MHZ_868\Fixed_LT_FIFO.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TI MSP430 USB1/MSP430" value="C:/Users\Greg\Armband_Repo\ECE_453\CC430_Code\Fixed_LT_FIFO\MHZ_868\Fixed_LT_FIFO.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/Fixed_LT_FIFO"/>
 </listAttribute>

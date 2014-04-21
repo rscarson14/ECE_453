@@ -1,0 +1,31 @@
+
+**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../RF_Toggle_LED_Demo.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
+"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: ../RF_Toggle_LED_Demo.c'
+' '
+'Building target: Fixed_LT_FIFO.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=80 -m"Fixed_LT_FIFO.map" --heap_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --xml_link_info="Fixed_LT_FIFO_linkInfo.xml" --rom_model -o "Fixed_LT_FIFO.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./RF_Toggle_LED_Demo.obj" "../lnk_cc430f5137.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project.
+   Recommend initializing all unused ports to eliminate wasted current
+   consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
+   Recommend initializing all unused ports to eliminate wasted current
+   consumption on unused pins.
+'Finished building target: Fixed_LT_FIFO.out'
+' '
+
+**** Build Finished ****

@@ -82,6 +82,19 @@
 #include <msp430.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "cc430x513x.h"
+#include "RF1A.h"
+#include "hal_pmm.h"
+
+/*******************
+ * Function Definition
+ */
+void Transmit(unsigned char *buffer, unsigned char length);
+void ReceiveOn(void);
+void ReceiveOff(void);
+void InitRadio(void);
+
+extern RF_SETTINGS rfSettings;
 
 #define   Num_of_Results   	4
 #define	  X_POS_TRIGGER  	2300
@@ -114,8 +127,22 @@ volatile unsigned int A5results[Num_of_Results];
 volatile unsigned int results[6];
 volatile unsigned int transmit_flag;
 
+#define  PACKET_LEN         (0x05)			// PACKET_LEN <= 61
+#define  RSSI_IDX           (PACKET_LEN)    // Index of appended RSSI
+#define  CRC_LQI_IDX        (PACKET_LEN+1)  // Index of appended LQI, checksum
+#define  CRC_OK             (BIT7)          // CRC_OK bit
+#define  PATABLE_VAL        (0x51)          // 0 dBm output
+
+unsigned char TxBuffer[PACKET_LEN]= {0xAA, 0xBB, 0xCC, 0xDD, 0x00};
+unsigned char RxBuffer[PACKET_LEN+2];
+unsigned char RxBufferLength = 0;
+
+unsigned char transmitting = 0;
+unsigned char receiving = 0;
+
 // Bit 0 = X-Acc, Bit 1 = Y-Acc, Bit 2 = Z-Acc, Bit 3 = Flex, Bit 4 = J2 (EMG_Down), Bit 5 = J3 (EMG_Up)
 volatile unsigned char controls;
+
 
 void uart_putc(unsigned char c);
 void uart_puts(const char *str);
@@ -130,6 +157,19 @@ void uart_puts(const char *str)
      while(*str) uart_putc(*str++);
 }
 
+void InitRadio(void)
+{
+  // Set the High-Power Mode Request Enable bit so LPM3 can be entered
+  // with active radio enabled
+  PMMCTL0_H = 0xA5;
+  PMMCTL0_L |= PMMHPMRE_L;
+  PMMCTL0_H = 0x00;
+
+  WriteRfSettings(&rfSettings);
+
+  WriteSinglePATable(PATABLE_VAL);
+}
+
 
 int main(void)
 {
@@ -137,6 +177,14 @@ int main(void)
 	int i = 0;
 
   WDTCTL = WDTPW+WDTHOLD;                   // Stop watchdog timer
+
+  // Increase PMMCOREV level to 2 for proper radio operation
+   SetVCore(2);
+
+   ResetRadioCore();
+   InitRadio();
+
+
   //////////////////////////////////////////
   PMAPPWD = 0x02D52;                        // Get write-access to port mapping regs
   P1MAP5 = PM_UCA0RXD;                      // Map UCA0RXD output to P1.5
@@ -232,6 +280,10 @@ int main(void)
 		   //sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
 		   uart_puts(str);
 
+		   TxBuffer[PACKET_LEN-2] = controls;
+		   Transmit( (unsigned char*)TxBuffer, sizeof TxBuffer);
+		   transmitting = 1;
+
 		   transmit_flag = 0;
 	   }
 
@@ -297,4 +349,84 @@ __interrupt void USCI_A0_ISR(void)
   case 4:break;                             // Vector 4 - TXIFG
   default: break;
   }
+}
+
+void Transmit(unsigned char *buffer, unsigned char length)
+{
+  RF1AIES |= BIT9;
+  RF1AIFG &= ~BIT9;                         // Clear pending interrupts
+  RF1AIE |= BIT9;                           // Enable TX end-of-packet interrupt
+
+  WriteBurstReg(RF_TXFIFOWR, buffer, length);
+
+  Strobe( RF_STX );                         // Strobe STX
+}
+
+void ReceiveOn(void)
+{
+  RF1AIES |= BIT9;                          // Falling edge of RFIFG9
+  RF1AIFG &= ~BIT9;                         // Clear a pending interrupt
+  RF1AIE  |= BIT9;                          // Enable the interrupt
+
+  // Radio is in IDLE following a TX, so strobe SRX to enter Receive Mode
+  Strobe( RF_SRX );
+}
+
+void ReceiveOff(void)
+{
+  RF1AIE &= ~BIT9;                          // Disable RX interrupts
+  RF1AIFG &= ~BIT9;                         // Clear pending IFG
+
+  // It is possible that ReceiveOff is called while radio is receiving a packet.
+  // Therefore, it is necessary to flush the RX FIFO after issuing IDLE strobe
+  // such that the RXFIFO is empty prior to receiving a packet.
+  Strobe( RF_SIDLE );
+  Strobe( RF_SFRX  );
+}
+
+#pragma vector=CC1101_VECTOR
+__interrupt void CC1101_ISR(void)
+{
+  switch(__even_in_range(RF1AIV,32))        // Prioritizing Radio Core Interrupt
+  {
+    case  0: break;                         // No RF core interrupt pending
+    case  2: break;                         // RFIFG0
+    case  4: break;                         // RFIFG1
+    case  6: break;                         // RFIFG2
+    case  8: break;                         // RFIFG3
+    case 10: break;                         // RFIFG4
+    case 12: break;                         // RFIFG5
+    case 14: break;                         // RFIFG6
+    case 16: break;                         // RFIFG7
+    case 18: break;                         // RFIFG8
+    case 20:                                // RFIFG9
+      if(receiving)			    // RX end of packet
+      {
+        // Read the length byte from the FIFO
+        RxBufferLength = ReadSingleReg( RXBYTES );
+        ReadBurstReg(RF_RXFIFORD, RxBuffer, RxBufferLength);
+
+        // Stop here to see contents of RxBuffer
+        __no_operation();
+
+        // Check the CRC results
+        if(RxBuffer[CRC_LQI_IDX] & CRC_OK)
+          P2OUT ^= BIT6;                    // Toggle LED1
+      }
+      else if(transmitting)		    // TX end of packet
+      {
+        RF1AIE &= ~BIT9;                    // Disable TX end-of-packet interrupt
+        P2OUT &= ~BIT7;                     // Turn off LED after Transmit
+        transmitting = 0;
+      }
+      else while(1); 			    // trap
+      break;
+    case 22: break;                         // RFIFG10
+    case 24: break;                         // RFIFG11
+    case 26: break;                         // RFIFG12
+    case 28: break;                         // RFIFG13
+    case 30: break;                         // RFIFG14
+    case 32: break;                         // RFIFG15
+  }
+  __bic_SR_register_on_exit(LPM3_bits);
 }

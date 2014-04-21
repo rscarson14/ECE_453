@@ -7,4 +7,6 @@
 	<isElfFormat value="true"/>
 	<linkerCommandFile value="lnk_cc430f5137.cmd"/>
 	<rts value="libc.a"/>
+	<connection value="common/targetdb/connections/TIMSP430-USB.xml"/>
+	<isTargetManual value="false"/>
 </projectOptions>

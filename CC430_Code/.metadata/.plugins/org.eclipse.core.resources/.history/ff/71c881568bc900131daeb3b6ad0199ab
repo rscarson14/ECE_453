@@ -1,0 +1,11 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+OBJ_SRCS += \
+../MHZ_868/HAL/HAL_PMM.obj \
+../MHZ_868/HAL/RF1A.obj \
+../MHZ_868/HAL/RfRegSettings.obj 
+
+

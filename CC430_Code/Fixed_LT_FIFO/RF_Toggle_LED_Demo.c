@@ -27,6 +27,8 @@
 ******************************************************************************/
 
 #include "RF_Toggle_LED_Demo.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define  PACKET_LEN         (0x05)			// PACKET_LEN <= 61
 #define  RSSI_IDX           (PACKET_LEN)    // Index of appended RSSI 
@@ -35,6 +37,19 @@
 #define  PATABLE_VAL        (0x51)          // 0 dBm output 
 
 extern RF_SETTINGS rfSettings;
+
+void uart_putc(unsigned char c);
+void uart_puts(const char *str);
+
+void uart_putc(unsigned char c)
+{
+	while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?
+	    UCA0TXBUF = c;                  // TX -> RXed character
+}
+void uart_puts(const char *str)
+{
+     while(*str) uart_putc(*str++);
+}
 
 unsigned char packetReceived;
 unsigned char packetTransmit; 
@@ -48,6 +63,8 @@ unsigned int i = 0;
 unsigned char transmitting = 0; 
 unsigned char receiving = 0; 
 
+char str[100];
+
 void main( void )
 {  
   // Stop watchdog timer to prevent time out reset 
@@ -60,6 +77,25 @@ void main( void )
   InitRadio();
   InitButtonLeds();
   
+  PMAPPWD = 0x02D52;                        // Get write-access to port mapping regs
+    P1MAP5 = PM_UCA0RXD;                      // Map UCA0RXD output to P1.5
+    P1MAP6 = PM_UCA0TXD;                      // Map UCA0TXD output to P1.6
+    PMAPPWD = 0;                              // Lock port mapping registers
+
+    P1DIR |= BIT6;                            // Set P1.6 as TX output
+    P1SEL |= BIT5 + BIT6;                     // Select P1.5 & P1.6 to UART function
+
+    UCA0CTL1 |= UCSWRST;                      // **Put state machine in reset**
+    UCA0CTL1 |= UCSSEL_1;                     // CLK = ACLK
+    UCA0BR0 = 0x03;                           // 32kHz/9600=3.41 (see User's Guide)
+    UCA0BR1 = 0x00;                           //
+    UCA0MCTL = UCBRS_3+UCBRF_0;               // Modulation UCBRSx=3, UCBRFx=0
+    UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
+    UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+
+    uart_puts((char *)"\n\r***************\n\rArmband\n\r");
+    uart_puts((char *)"***************\n\r\n\r");
+
   ReceiveOn(); 
   receiving = 1; 
     
@@ -201,7 +237,11 @@ __interrupt void CC1101_ISR(void)
         ReadBurstReg(RF_RXFIFORD, RxBuffer, RxBufferLength); 
         
         // Stop here to see contents of RxBuffer
-        __no_operation(); 		   
+        __no_operation();
+
+        sprintf(str, "Active: %x\n\r", RxBuffer[PACKET_LEN-2]);
+        //sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
+        uart_puts(str);
         
         // Check the CRC results
         if(RxBuffer[CRC_LQI_IDX] & CRC_OK)  
