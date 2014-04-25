@@ -30,7 +30,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define  PACKET_LEN         (0x05)			// PACKET_LEN <= 61
+#define  PACKET_LEN         (0x05)      // PACKET_LEN <= 61
 #define  RSSI_IDX           (PACKET_LEN)    // Index of appended RSSI 
 #define  CRC_LQI_IDX        (PACKET_LEN+1)  // Index of appended LQI, checksum
 #define  CRC_OK             (BIT7)          // CRC_OK bit 
@@ -43,8 +43,8 @@ void uart_puts(const char *str);
 
 void uart_putc(unsigned char c)
 {
-	while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?
-	    UCA0TXBUF = c;                  // TX -> RXed character
+  while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?
+      UCA0TXBUF = c;                  // TX -> RXed character
 }
 void uart_puts(const char *str)
 {
@@ -54,7 +54,7 @@ void uart_puts(const char *str)
 unsigned char packetReceived;
 unsigned char packetTransmit; 
 
-unsigned char RxBuffer[PACKET_LEN+2];
+volatile unsigned char RxBuffer[PACKET_LEN+2];
 unsigned char RxBufferLength = 0;
 const unsigned char TxBuffer[PACKET_LEN]= {0xAA, 0xBB, 0xCC, 0xDD, 0xEE};
 unsigned char buttonPressed = 0;
@@ -71,8 +71,45 @@ void main( void )
   WDTCTL = WDTPW + WDTHOLD; 
 
   // Increase PMMCOREV level to 2 for proper radio operation
-  SetVCore(2);                            
+  SetVCore(2);
+
+  /////////////////////////////////////////////////////////////////////////////////////////
+  // SPI INIT
   
+  PMAPPWD = 0x02D52;                        // Get write-access to port mapping regs
+  //P2MAP0 = PM_UCA0SIMO;                     // Map UCA0SIMO output to P2.0
+  //P2MAP2 = PM_UCA0SOMI;                     // Map UCA0SOMI output to P2.2
+  //P2MAP4 = PM_UCA0CLK;                      // Map UCA0CLK output to P2.4
+
+  P1MAP4 = PM_UCB0CLK;
+  P1MAP3 = PM_UCB0SIMO;
+  P1MAP2 = PM_UCB0SOMI;
+
+  PMAPPWD = 0;                              // Lock port mapping registers
+
+  P2OUT |= BIT6 + BIT7;                            // Set P1.0 for LED
+                                            // Set P1.2 for slave reset
+  P2DIR |= BIT6 + BIT7;                     // Set P1.0, P1.2 to output direction
+  P1DIR |= BIT2 + BIT3 + BIT4;              // ACLK, MCLK, SMCLK set out to pins
+  P1SEL |= BIT2 + BIT3 + BIT4;              // P2.0,2,4 for debugging purposes.
+
+  UCB0CTL1 |= UCSWRST;                      // **Put state machine in reset**
+//  UCB0CTL0 |= UCMST+UCSYNC+UCCKPL+UCMSB;    // 3-pin, 8-bit SPI master
+  UCB0CTL0 |= UCSYNC+UCCKPL+UCMSB;    // 3-pin, 8-bit SPI slave
+                                            // Clock polarity high, MSB
+  UCB0CTL1 |= UCSSEL_2;                     // SMCLK
+  UCB0BR0 = 0x02;                           // /2
+  UCB0BR1 = 0;                              //
+  UCA0MCTL = 0;                             // No modulation
+  UCB0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
+  UCB0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+
+//  P1OUT &= ~0x02;                           // Now with SPI signals initialized,
+//  P1OUT |= 0x02;                            // reset slave
+
+  __delay_cycles(100);                      // Wait for slave to initialize
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
   ResetRadioCore();     
   InitRadio();
   InitButtonLeds();
@@ -230,7 +267,7 @@ __interrupt void CC1101_ISR(void)
     case 16: break;                         // RFIFG7
     case 18: break;                         // RFIFG8
     case 20:                                // RFIFG9
-      if(receiving)			    // RX end of packet
+      if(receiving)         // RX end of packet
       {
         // Read the length byte from the FIFO       
         RxBufferLength = ReadSingleReg( RXBYTES );               
@@ -239,21 +276,21 @@ __interrupt void CC1101_ISR(void)
         // Stop here to see contents of RxBuffer
         __no_operation();
 
-        sprintf(str, "Active: %x\n\r", RxBuffer[PACKET_LEN-2]);
+       // sprintf(str, "Active: %x\n\r", RxBuffer[PACKET_LEN-2]);
         //sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
-        uart_puts(str);
+       // uart_puts(str);
         
         // Check the CRC results
         if(RxBuffer[CRC_LQI_IDX] & CRC_OK)  
           P2OUT ^= BIT6;                    // Toggle LED1
       }
-      else if(transmitting)		    // TX end of packet
+      else if(transmitting)       // TX end of packet
       {
         RF1AIE &= ~BIT9;                    // Disable TX end-of-packet interrupt
         P2OUT &= ~BIT7;                     // Turn off LED after Transmit
         transmitting = 0; 
       }
-      else while(1); 			    // trap 
+      else while(1);          // trap 
       break;
     case 22: break;                         // RFIFG10
     case 24: break;                         // RFIFG11
@@ -265,3 +302,40 @@ __interrupt void CC1101_ISR(void)
   __bic_SR_register_on_exit(LPM3_bits);     
 }
 
+#pragma vector=USCI_B0_VECTOR
+__interrupt void USCI_B0_ISR(void)
+{
+  switch(__even_in_range(UCB0IV,4))
+  {
+    case 0: break;                          // Vector 0 - no interrupt
+    case 2:                                 // Vector 2 - RXIFG
+      while (!(UCB0IFG&UCTXIFG));           // USCI_A0 TX buffer ready?
+
+//      if (UCB0RXBUF==SLV_Data)              // Test for correct character RX'd
+//        P2OUT |= BIT6;                      // If correct, light LED
+//      else
+//        P2OUT &= ~BIT6;                     // If incorrect, clear LED
+
+     //MST_Data = 0x04;                      // Increment data
+     // SLV_Data++;
+      UCB0TXBUF = RxBuffer[PACKET_LEN-2];                 // Send next value
+
+      // Send 0x12 == 0001 0010  Receive 0x24 == 0010 0100
+      // Send 0x24 == 0010 0100  Receive 0x84 == 1000 0100
+      // Send 0x01 == 0000 0001  Receive 0x04 == 0000 0100
+      // Send 0x02 == 0000 0010  Receive 0x08 == 0000 1000
+      // Second Try
+          // Send 0x02 == 0000 0010 Receive 0x80 == 1000 0000
+      // Send 0x03 == 0000 0011  Receive 0x60 == 0110 0000
+      // send 0x10 == 0001 0000  Receive 0x44 == 0100 0100
+      // Send 0x20 == 0010 0000  Receive 0x02 == 0000 0010
+      // Send 0x30 == 0011 0000  Receive 0x06 == 0000 0110
+
+
+      __delay_cycles(40);                   // Add time between transmissions to
+                                            // make sure slave can process information
+      break;
+    case 4: break;                          // Vector 4 - TXIFG
+    default: break;
+  }
+}
