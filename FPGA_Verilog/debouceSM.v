@@ -8,7 +8,7 @@ module debounceSM(
 	input wire signal_in, rst_n, clk;
 	
 	//Outputs
-	output wire signal_out;
+	output reg signal_out;
 	
 	localparam target_count = 4'h5;
 	
@@ -20,8 +20,8 @@ module debounceSM(
 	reg [1:0] current_state;
 	reg [3:0] count;
 	
-	wire [1:0] next_state;
-	wire reset_count;
+	reg [1:0] next_state;
+	reg reset_count;
 	
 	always@(posedge clk, negedge rst_n)begin
 		if(~rst_n)begin
@@ -111,6 +111,12 @@ module debounceSM(
 					next_state = state_high;
 				end
 			end
+			
+			
+			default : begin
+				next_state = state_low;
+			end
+		end
 	end
 
 endmodule
