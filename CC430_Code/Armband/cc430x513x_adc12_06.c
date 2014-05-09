@@ -99,8 +99,8 @@ extern RF_SETTINGS rfSettings;
 #define   Num_of_Results   	4
 #define	  X_POS_TRIGGER  	2300
 #define	  X_NEG_TRIGGER		1700
-#define	  Y_POS_TRIGGER     2300
-#define   Y_NEG_TRIGGER		1700
+#define	  Y_POS_TRIGGER     2200
+#define   Y_NEG_TRIGGER		1800
 #define	  Z_POS_TRIGGER		2300
 #define   Z_NEG_TRIGGER     1700
 #define   FLEX_L_TRIGGER 	2800
@@ -116,6 +116,15 @@ extern RF_SETTINGS rfSettings;
 #define   FLEX_R_CTRL		0x20
 #define   J2_DOWN_CTRL		0x40
 #define   J3_UP_CTRL		0x80
+
+#define   ARM_RIGHT			0x01
+#define	  ARM_DOWN			0x02
+#define   ARM_UP			0x04
+#define	  ARM_LEFT			0x08
+#define   ROT_RIGHT			0x10
+#define   ROT_LEFT			0x20
+#define   EMG_DOWN			0x40
+#define   EMG_UP			0x80
 
 volatile unsigned int A0results[Num_of_Results];
 volatile unsigned int A1results[Num_of_Results];
@@ -142,7 +151,7 @@ unsigned char receiving = 0;
 
 // Bit 0 = X-Acc, Bit 1 = Y-Acc, Bit 2 = Z-Acc, Bit 3 = Flex, Bit 4 = J2 (EMG_Down), Bit 5 = J3 (EMG_Up)
 volatile unsigned char controls;
-
+volatile unsigned char controls2;
 
 void uart_putc(unsigned char c);
 void uart_puts(const char *str);
@@ -170,6 +179,7 @@ void InitRadio(void)
   WriteSinglePATable(PATABLE_VAL);
 }
 
+int debounce[8] = {0};
 
 int main(void)
 {
@@ -228,7 +238,10 @@ int main(void)
   __bis_SR_register(/*LPM0_bits + */GIE);       // Enter LPM0, Enable interrupts
   __no_operation();                         // For debugger  
 
+   controls = 0x00;
 
+   P2DIR |= 0x40;
+ //  P2OUT |= BIT6;
 
    while(1)
    {
@@ -265,6 +278,124 @@ int main(void)
 				J3 (Channel 6) = TODO;
 			*/
 
+		   //Rot_left
+		   if (results[1] < Y_NEG_TRIGGER + 50/* && (results[3] < (Z_POS_TRIGGER + 100)) */) {
+			   debounce[5]++;
+			   controls &= ~ROT_LEFT;
+			   if (debounce[5] > 0) {
+				   controls |= ROT_LEFT;
+				   debounce[5] = 0;
+			   }
+		   }
+		   else {
+			   debounce[5] = 0;
+			   controls &= ~ROT_LEFT;
+		   }
+
+		   //Rotate_Right
+		   if (results[1] > Y_POS_TRIGGER - 50/* && (results[3] < (Z_POS_TRIGGER + 100))*/) {
+			   debounce[4]++;
+			   controls &= ~ROT_RIGHT;
+			   if (debounce[4] > 0) {
+				   controls |= ROT_RIGHT;
+				   debounce[4] = 0;
+			   }
+		   }
+		   else {
+			   debounce[4] = 0;
+			   controls &= ~ROT_RIGHT;
+		   }
+
+		   //Arm Right
+		   if ((results[1] > Y_POS_TRIGGER) && (results[3] > (Z_POS_TRIGGER+200))) {
+			   debounce[0]++;
+			   controls &= ~ARM_RIGHT;
+			   if (debounce[0] > 18) {
+				   controls |= ARM_RIGHT;
+				   debounce[0] = 0;
+			   }
+		   }
+		   else {
+		  			   debounce[0] = 0;
+		  			   controls &= ~ARM_RIGHT;
+		   }
+
+		   //Arm Left
+		   if ((results[1] < (Y_NEG_TRIGGER)) && (results[3] > (Z_POS_TRIGGER+150))) {
+			   debounce[3]++;
+			   controls &= ~ARM_LEFT;
+			   if (debounce[3] > 18) {
+				   controls |= ARM_LEFT;
+				   debounce[3] = 0;
+			   }
+
+		   }
+		   else {
+			   debounce[3] = 0;
+			   controls &= ~ARM_LEFT;
+		   }
+
+		   //Arm up
+	//	   if ((results[3] > 2650) && (results[1] > 1900 && results[1] < 2100) && (results[0] > 1900 && results[0] < 2100)) {
+		   if ((results[2] > FLEX_L_TRIGGER)) {
+		   	   debounce[2]++;
+			   controls &= ~ARM_UP;
+			   if (debounce[2] > 0) {
+				   controls |= ARM_UP;
+				   debounce[2] = 0;
+			   }
+
+		   }
+		   else {
+			   debounce[2] = 0;
+			   controls &= ~ARM_UP;
+		   }
+
+		   //Arm down
+//		   if ((results[3] < 2350) && (results[1] > 1900 && results[1] < 2100) && (results[0] > 1900 && results[0] < 2100)) {
+		   if ((results[2] < FLEX_R_TRIGGER - 300)) {
+			   debounce[1]++;
+			   controls &= ~ARM_DOWN;
+			   if (debounce[1] > 0) {
+				   controls |= ARM_DOWN;
+				   debounce[1] = 0;
+			   }
+
+		   }
+		   else {
+			   debounce[1] = 0;
+			   controls &= ~ARM_DOWN;
+		   }
+
+		   if ((results[5] > (J2_TRIGGER-100))) {
+			   debounce[6]++;
+			   controls &= ~EMG_DOWN;
+			   if (debounce[6] > 0) {
+				   controls |= EMG_DOWN;
+				   debounce[6] = 0;
+			   }
+
+		   }
+		   else {
+			   debounce[6] = 0;
+			   controls &= ~EMG_DOWN;
+		   }
+
+//		   controls |= ARM_RIGHT;
+//		   controls |= ARM_DOWN;
+//		   controls |= ARM_UP;
+//		   controls |= ARM_LEFT;
+//		   controls |= ROT_RIGHT;
+//		   controls |= ROT_LEFT;
+		   controls &= ~ARM_RIGHT;
+//		   controls &= ~ARM_DOWN;
+		   controls &= ~ARM_UP;
+		   controls &= ~ARM_LEFT;
+//		   controls &= ~ROT_RIGHT;
+//		   controls &= ~ROT_LEFT;
+//		   controls &= ~EMG_DOWN;
+		   controls &= ~EMG_UP;
+/*
 		   controls = (results[0] > X_POS_TRIGGER) ? controls|X_POS_CTRL : controls&(~X_POS_CTRL);
 		   controls = (results[0] < X_NEG_TRIGGER) ? controls|X_NEG_CTRL : controls&(~X_NEG_CTRL);
 		   controls = (results[1] > Y_POS_TRIGGER) ? controls|Y_POS_CTRL : controls&(~Y_POS_CTRL);
@@ -275,12 +406,15 @@ int main(void)
 		   controls = (results[2] < FLEX_R_TRIGGER) ? controls|FLEX_R_CTRL : controls&(~FLEX_R_CTRL);
 		   controls = (results[4] > J2_TRIGGER) ?  controls|J2_DOWN_CTRL : controls&(~J2_DOWN_CTRL);
 		   controls = controls&(~J3_UP_CTRL);//(results[5] > J3_TRIGGER) ? controls|J3_UP_CTRL : controls&(~J3_UP_CTRL);
+*/
+		   controls2 = 0xAA;
 
-		   sprintf(str, "Active: %x\n\r", controls);
-		   //sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
-		   uart_puts(str);
+//		   sprintf(str, "Active: %x\n\r", controls);
+//		   sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
+//		   uart_puts(str);
 
 		   TxBuffer[PACKET_LEN-2] = controls;
+		   TxBuffer[PACKET_LEN-1] = controls2;
 		   Transmit( (unsigned char*)TxBuffer, sizeof TxBuffer);
 		   transmitting = 1;
 

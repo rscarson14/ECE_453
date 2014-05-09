@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v4.2.1                      
 ******************************************************************************
->> Linked Mon Apr 21 14:48:20 2014
+>> Linked Thu May 01 15:35:55 2014
 
 OUTPUT FILE NAME:   <Armband.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00008d6e
+ENTRY POINT SYMBOL: "_c_int00"  address: 00008aa2
 
 
 MEMORY CONFIGURATION
@@ -18,8 +18,8 @@ MEMORY CONFIGURATION
   INFOC                 00001880   00000080  00000000  00000080  RWIX
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
-  RAM                   00001c00   00000ffe  000000c6  00000f38  RWIX
-  FLASH                 00008000   00007f80  00000f1a  00007066  RWIX
+  RAM                   00001c00   00000ffe  000000d7  00000f27  RWIX
+  FLASH                 00008000   00007f80  00000ba2  000073de  RWIX
   INT00                 0000ff80   00000002  00000000  00000002  RWIX
   INT01                 0000ff82   00000002  00000000  00000002  RWIX
   INT02                 0000ff84   00000002  00000000  00000002  RWIX
@@ -94,7 +94,7 @@ section   page    origin      length       input sections
 .init_array 
 *          0    00008000    00000000     UNINITIALIZED
 
-.bss       0    00001c00    00000047     UNINITIALIZED
+.bss       0    00001c00    00000048     UNINITIALIZED
                   00001c00    0000000c     (.common:results)
                   00001c0c    00000008     (.common:A0results)
                   00001c14    00000008     (.common:A1results)
@@ -105,14 +105,16 @@ section   page    origin      length       input sections
                   00001c3c    00000008     (.common:RxBuffer)
                   00001c44    00000002     (.common:transmit_flag)
                   00001c46    00000001     (.common:controls)
+                  00001c47    00000001     (.common:controls2)
 
 .TI.noinit 
 *          0    00001c00    00000000     UNINITIALIZED
 
-.data      0    00001c48    0000002f     UNINITIALIZED
+.data      0    00001c48    0000003f     UNINITIALIZED
                   00001c48    00000024     RfRegSettings.obj (.data)
-                  00001c6c    00000006     cc430x513x_adc12_06.obj (.data)
-                  00001c72    00000005     cc430x513x_adc12_06.obj (.data:TxBuffer)
+                  00001c6c    00000010     cc430x513x_adc12_06.obj (.data:debounce)
+                  00001c7c    00000006     cc430x513x_adc12_06.obj (.data)
+                  00001c82    00000005     cc430x513x_adc12_06.obj (.data:TxBuffer)
 
 .TI.persistent 
 *          0    00001c48    00000000     UNINITIALIZED
@@ -121,63 +123,46 @@ section   page    origin      length       input sections
                   00002bac    00000002     rts430x_lc_sd_eabi.lib : boot.obj (.stack)
                   00002bae    0000004e     --HOLE--
 
-.text      0    00008000    00000e72     
-                  00008000    00000252     cc430x513x_adc12_06.obj (.text:main)
-                  00008252    000001a0     RF1A.obj (.text:WriteRfSettings)
-                  000083f2    0000010e     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.text:_setfield)
-                  00008500    000000d8                            : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
-                  000085d8    000000d4     HAL_PMM.obj (.text:SetVCoreUp)
-                  000086ac    000000c0     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.text:__TI_printfi_minimal)
-                  0000876c    0000009a     HAL_PMM.obj (.text:SetVCoreDown)
-                  00008806    0000008e     RF1A.obj (.text:Strobe)
-                  00008894    00000070     rts430x_lc_sd_eabi.lib : autoinit.obj (.text:_auto_init)
-                  00008904    00000068     cc430x513x_adc12_06.obj (.text:_isr:ADC12ISR)
-                  0000896c    0000005c     cc430x513x_adc12_06.obj (.text:_isr:CC1101_ISR)
-                  000089c8    00000052     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.text:_ltostr)
-                  00008a1a    0000004c                            : _printfi_min.obj (.text:_pproc_diouxp)
-                  00008a66    00000042     RF1A.obj (.text:ReadBurstReg)
-                  00008aa8    00000040     rts430x_lc_sd_eabi.lib : cpy_util.obj (.text:__memcpy_far)
-                  00008ae8    00000040                            : _printfi_min.obj (.text:_pproc_str)
-                  00008b28    0000003e     RF1A.obj (.text:WriteBurstReg)
-                  00008b66    0000003e     rts430x_lc_sd_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
-                  00008ba4    0000003c                            : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
-                  00008be0    0000003a     HAL_PMM.obj (.text:SetVCore)
-                  00008c1a    00000038     rts430x_lc_sd_eabi.lib : sprintf.obj (.text:sprintf)
-                  00008c52    0000002e                            : _printfi_min.obj (.text:_getarg_diouxp)
-                  00008c80    0000002c     RF1A.obj (.text:ReadSingleReg)
-                  00008cac    00000028     cc430x513x_adc12_06.obj (.text:Transmit)
-                  00008cd4    00000022     cc430x513x_adc12_06.obj (.text:InitRadio)
-                  00008cf6    00000022     RF1A.obj (.text:WriteSinglePATable)
-                  00008d18    00000020     cc430x513x_adc12_06.obj (.text:_isr:USCI_A0_ISR)
-                  00008d38    0000001c     rts430x_lc_sd_eabi.lib : memccpy.obj (.text:memccpy)
-                  00008d54    0000001a                            : _printfi_min.obj (.text:_div)
-                  00008d6e    0000001a                            : boot.obj (.text:_isr:_c_int00_noexit)
-                  00008d88    00000018                            : sprintf.obj (.text:_outs)
-                  00008da0    00000016                            : div16u.obj (.text)
-                  00008db6    00000016                            : mult16_f5hw.obj (.text)
-                  00008dcc    00000014     RF1A.obj (.text:WriteSingleReg)
-                  00008de0    00000014     rts430x_lc_sd_eabi.lib : memset.obj (.text:memset)
-                  00008df4    00000012     RF1A.obj (.text:ResetRadioCore)
-                  00008e06    00000012     rts430x_lc_sd_eabi.lib : sprintf.obj (.text:_outc)
-                  00008e18    00000012                            : memcpy.obj (.text:memcpy)
-                  00008e2a    00000012     cc430x513x_adc12_06.obj (.text:uart_puts)
-                  00008e3c    0000000e     rts430x_lc_sd_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
-                  00008e4a    0000000e                            : strlen.obj (.text:strlen)
-                  00008e58    0000000c     cc430x513x_adc12_06.obj (.text:uart_putc)
-                  00008e64    00000006     rts430x_lc_sd_eabi.lib : isr_trap.obj (.text:__TI_ISR_TRAP)
-                  00008e6a    00000004                            : pre_init.obj (.text:_system_pre_init)
-                  00008e6e    00000004                            : exit.obj (.text:abort)
+.text      0    00008000    00000b1c     
+                  00008000    000002ce     cc430x513x_adc12_06.obj (.text:main)
+                  000082ce    000001a0     RF1A.obj (.text:WriteRfSettings)
+                  0000846e    000000d8     rts430x_lc_sd_eabi.lib : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  00008546    000000d4     HAL_PMM.obj (.text:SetVCoreUp)
+                  0000861a    0000009a     HAL_PMM.obj (.text:SetVCoreDown)
+                  000086b4    0000008e     RF1A.obj (.text:Strobe)
+                  00008742    00000070     rts430x_lc_sd_eabi.lib : autoinit.obj (.text:_auto_init)
+                  000087b2    00000068     cc430x513x_adc12_06.obj (.text:_isr:ADC12ISR)
+                  0000881a    0000005c     cc430x513x_adc12_06.obj (.text:_isr:CC1101_ISR)
+                  00008876    00000042     RF1A.obj (.text:ReadBurstReg)
+                  000088b8    00000040     rts430x_lc_sd_eabi.lib : cpy_util.obj (.text:__memcpy_far)
+                  000088f8    0000003e     RF1A.obj (.text:WriteBurstReg)
+                  00008936    0000003e     rts430x_lc_sd_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  00008974    0000003c                            : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  000089b0    0000003a     HAL_PMM.obj (.text:SetVCore)
+                  000089ea    0000002c     RF1A.obj (.text:ReadSingleReg)
+                  00008a16    00000028     cc430x513x_adc12_06.obj (.text:Transmit)
+                  00008a3e    00000022     cc430x513x_adc12_06.obj (.text:InitRadio)
+                  00008a60    00000022     RF1A.obj (.text:WriteSinglePATable)
+                  00008a82    00000020     cc430x513x_adc12_06.obj (.text:_isr:USCI_A0_ISR)
+                  00008aa2    0000001a     rts430x_lc_sd_eabi.lib : boot.obj (.text:_isr:_c_int00_noexit)
+                  00008abc    00000014     RF1A.obj (.text:WriteSingleReg)
+                  00008ad0    00000012     RF1A.obj (.text:ResetRadioCore)
+                  00008ae2    00000012     cc430x513x_adc12_06.obj (.text:uart_puts)
+                  00008af4    0000000e     rts430x_lc_sd_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  00008b02    0000000c     cc430x513x_adc12_06.obj (.text:uart_putc)
+                  00008b0e    00000006     rts430x_lc_sd_eabi.lib : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  00008b14    00000004                            : pre_init.obj (.text:_system_pre_init)
+                  00008b18    00000004                            : exit.obj (.text:abort)
 
-.const     0    00008e72    00000054     
-                  00008e72    00000040     cc430x513x_adc12_06.obj (.const:.string)
-                  00008eb2    00000014     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.const:.string)
+.const     0    00008b1c    00000032     
+                  00008b1c    00000032     cc430x513x_adc12_06.obj (.const:.string)
 
-.cinit     0    00008ec6    00000054     
-                  00008ec6    00000031     (.cinit..data.load) [load image, compression = rle]
-                  00008ef7    00000001     --HOLE-- [fill = 0]
-                  00008ef8    0000000c     (__TI_handler_table)
-                  00008f04    00000006     (.cinit..bss.load) [load image, compression = zero_init]
-                  00008f0a    00000010     (__TI_cinit_table)
+.cinit     0    00008b4e    00000054     
+                  00008b4e    00000031     (.cinit..data.load) [load image, compression = rle]
+                  00008b7f    00000001     --HOLE-- [fill = 0]
+                  00008b80    0000000c     (__TI_handler_table)
+                  00008b8c    00000006     (.cinit..bss.load) [load image, compression = zero_init]
+                  00008b92    00000010     (__TI_cinit_table)
 
 AES        0    0000ffda    00000002     
                   0000ffda    00000002     rts430x_lc_sd_eabi.lib : int45.obj (.int45)
@@ -240,14 +225,14 @@ SYSNMI     0    0000fffc    00000002
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00008f0a records: 2, size/record: 8, table size: 16
-	.data: load addr=00008ec6, load size=00000031 bytes, run addr=00001c48, run size=0000002f bytes, compression=rle
-	.bss: load addr=00008f04, load size=00000006 bytes, run addr=00001c00, run size=00000047 bytes, compression=zero_init
+__TI_cinit_table @ 00008b92 records: 2, size/record: 8, table size: 16
+	.data: load addr=00008b4e, load size=00000031 bytes, run addr=00001c48, run size=0000003f bytes, compression=rle
+	.bss: load addr=00008b8c, load size=00000006 bytes, run addr=00001c00, run size=00000048 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00008ef8 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00008b80 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_rle24
 	index: 2, handler: __TI_decompress_none
@@ -278,7 +263,7 @@ address    name
 0000070a   ADC12IFG
 0000070b   ADC12IFG_H
 0000070a   ADC12IFG_L
-00008904   ADC12ISR
+000087b2   ADC12ISR
 0000070e   ADC12IV
 0000070f   ADC12IV_H
 0000070e   ADC12IV_L
@@ -361,7 +346,7 @@ address    name
 000009c4   AESASTAT
 000009c5   AESASTAT_H
 000009c4   AESASTAT_L
-00008e6e   C$$EXIT
+00008b18   C$$EXIT
 000008c0   CBCTL0
 000008c1   CBCTL0_H
 000008c0   CBCTL0_L
@@ -378,7 +363,7 @@ address    name
 000008cd   CBINT_H
 000008cc   CBINT_L
 000008ce   CBIV
-0000896c   CC1101_ISR
+0000881a   CC1101_ISR
 00000150   CRCDI
 00000152   CRCDIRB
 00000153   CRCDIRB_H
@@ -442,7 +427,7 @@ address    name
 00000146   FCTL4
 00000147   FCTL4_H
 00000146   FCTL4_L
-00008cd4   InitRadio
+00008a3e   InitRadio
 000004c4   MAC
 000004da   MAC32H
 000004db   MAC32H_H
@@ -752,11 +737,11 @@ address    name
 000004b6   RTCYEAR
 000004b7   RTCYEAR_H
 000004b6   RTCYEAR_L
-00008a66   ReadBurstReg
-00008c80   ReadSingleReg
-00008df4   ResetRadioCore
+00008876   ReadBurstReg
+000089ea   ReadSingleReg
+00008ad0   ResetRadioCore
 00001c3c   RxBuffer
-00001c6c   RxBufferLength
+00001c7c   RxBufferLength
 00000100   SFRIE1
 00000101   SFRIE1_H
 00000100   SFRIE1_L
@@ -811,8 +796,8 @@ address    name
 0000019a   SYSUNIV
 0000019b   SYSUNIV_H
 0000019a   SYSUNIV_L
-00008be0   SetVCore
-00008806   Strobe
+000089b0   SetVCore
+000086b4   Strobe
 00000352   TA0CCR0
 00000354   TA0CCR1
 00000356   TA0CCR2
@@ -837,8 +822,8 @@ address    name
 000003a0   TA1EX0
 000003ae   TA1IV
 00000390   TA1R
-00008cac   Transmit
-00001c72   TxBuffer
+00008a16   Transmit
+00001c82   TxBuffer
 000005d0   UCA0ABCTL
 000005c6   UCA0BRW
 000005c7   UCA0BRW_H
@@ -903,26 +888,26 @@ address    name
 00000170   UCSCTL8
 00000171   UCSCTL8_H
 00000170   UCSCTL8_L
-00008d18   USCI_A0_ISR
+00008a82   USCI_A0_ISR
 0000015c   WDTCTL
 0000015d   WDTCTL_H
 0000015c   WDTCTL_L
-00008b28   WriteBurstReg
-00008252   WriteRfSettings
-00008cf6   WriteSinglePATable
-00008dcc   WriteSingleReg
+000088f8   WriteBurstReg
+000082ce   WriteRfSettings
+00008a60   WriteSinglePATable
+00008abc   WriteSingleReg
 00002bfc   __STACK_END
 00000050   __STACK_SIZE
-00008f0a   __TI_CINIT_Base
-00008f1a   __TI_CINIT_Limit
-00008ef8   __TI_Handler_Table_Base
-00008f04   __TI_Handler_Table_Limit
+00008b92   __TI_CINIT_Base
+00008ba2   __TI_CINIT_Limit
+00008b80   __TI_Handler_Table_Base
+00008b8c   __TI_Handler_Table_Limit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
-00008e64   __TI_ISR_TRAP
+00008b0e   __TI_ISR_TRAP
 00000001   __TI_args_main
-00008ba4   __TI_decompress_none
-00008e3c   __TI_decompress_rle24
+00008974   __TI_decompress_none
+00008af4   __TI_decompress_rle24
 00000001   __TI_exit
 0000ffda   __TI_int45
 0000ffdc   __TI_int46
@@ -941,36 +926,29 @@ UNDEFED    __TI_INITARRAY_Limit
 0000fff8   __TI_int60
 0000fffa   __TI_int61
 0000fffc   __TI_int62
-000086ac   __TI_printfi_minimal
-00008b66   __TI_zero_init
+00008936   __TI_zero_init
 ffffffff   __binit__
 ffffffff   __c_args__
-00008aa8   __memcpy_far
-00008da0   __mspabi_divu
-00008db6   __mspabi_mpyi_f5hw
-00008da0   __mspabi_remu
-00008894   _auto_init
-00008d6e   _c_int00
-00008d6e   _c_int00_noexit
+000088b8   __memcpy_far
+00008742   _auto_init
+00008aa2   _c_int00
+00008aa2   _c_int00_noexit
 0000fffe   _reset_vector
 00002bac   _stack
-00008e6a   _system_pre_init
-00008e6e   abort
+00008b14   _system_pre_init
+00008b18   abort
 ffffffff   binit
 00001c46   controls
+00001c47   controls2
+00001c6c   debounce
 00008000   main
-00008d38   memccpy
-00008e18   memcpy
-00008de0   memset
-00001c6e   receiving
+00001c7e   receiving
 00001c00   results
 00001c48   rfSettings
-00008c1a   sprintf
-00008e4a   strlen
 00001c44   transmit_flag
-00001c6d   transmitting
-00008e58   uart_putc
-00008e2a   uart_puts
+00001c7d   transmitting
+00008b02   uart_putc
+00008ae2   uart_puts
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -1620,54 +1598,47 @@ address    name
 00001c3c   RxBuffer
 00001c44   transmit_flag
 00001c46   controls
+00001c47   controls2
 00001c48   rfSettings
-00001c6c   RxBufferLength
-00001c6d   transmitting
-00001c6e   receiving
-00001c72   TxBuffer
+00001c6c   debounce
+00001c7c   RxBufferLength
+00001c7d   transmitting
+00001c7e   receiving
+00001c82   TxBuffer
 00002bac   _stack
 00002bfc   __STACK_END
 00008000   main
-00008252   WriteRfSettings
-000086ac   __TI_printfi_minimal
-00008806   Strobe
-00008894   _auto_init
-00008904   ADC12ISR
-0000896c   CC1101_ISR
-00008a66   ReadBurstReg
-00008aa8   __memcpy_far
-00008b28   WriteBurstReg
-00008b66   __TI_zero_init
-00008ba4   __TI_decompress_none
-00008be0   SetVCore
-00008c1a   sprintf
-00008c80   ReadSingleReg
-00008cac   Transmit
-00008cd4   InitRadio
-00008cf6   WriteSinglePATable
-00008d18   USCI_A0_ISR
-00008d38   memccpy
-00008d6e   _c_int00
-00008d6e   _c_int00_noexit
-00008da0   __mspabi_divu
-00008da0   __mspabi_remu
-00008db6   __mspabi_mpyi_f5hw
-00008dcc   WriteSingleReg
-00008de0   memset
-00008df4   ResetRadioCore
-00008e18   memcpy
-00008e2a   uart_puts
-00008e3c   __TI_decompress_rle24
-00008e4a   strlen
-00008e58   uart_putc
-00008e64   __TI_ISR_TRAP
-00008e6a   _system_pre_init
-00008e6e   C$$EXIT
-00008e6e   abort
-00008ef8   __TI_Handler_Table_Base
-00008f04   __TI_Handler_Table_Limit
-00008f0a   __TI_CINIT_Base
-00008f1a   __TI_CINIT_Limit
+000082ce   WriteRfSettings
+000086b4   Strobe
+00008742   _auto_init
+000087b2   ADC12ISR
+0000881a   CC1101_ISR
+00008876   ReadBurstReg
+000088b8   __memcpy_far
+000088f8   WriteBurstReg
+00008936   __TI_zero_init
+00008974   __TI_decompress_none
+000089b0   SetVCore
+000089ea   ReadSingleReg
+00008a16   Transmit
+00008a3e   InitRadio
+00008a60   WriteSinglePATable
+00008a82   USCI_A0_ISR
+00008aa2   _c_int00
+00008aa2   _c_int00_noexit
+00008abc   WriteSingleReg
+00008ad0   ResetRadioCore
+00008ae2   uart_puts
+00008af4   __TI_decompress_rle24
+00008b02   uart_putc
+00008b0e   __TI_ISR_TRAP
+00008b14   _system_pre_init
+00008b18   C$$EXIT
+00008b18   abort
+00008b80   __TI_Handler_Table_Base
+00008b8c   __TI_Handler_Table_Limit
+00008b92   __TI_CINIT_Base
+00008ba2   __TI_CINIT_Limit
 0000ffda   __TI_int45
 0000ffdc   __TI_int46
 0000ffe0   __TI_int48
@@ -1692,4 +1663,4 @@ ffffffff   binit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
 
-[714 symbols]
+[707 symbols]

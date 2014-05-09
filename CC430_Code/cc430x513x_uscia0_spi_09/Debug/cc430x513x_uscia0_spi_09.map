@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v4.2.1                      
 ******************************************************************************
->> Linked Mon Apr 21 16:31:17 2014
+>> Linked Wed Apr 23 15:57:20 2014
 
 OUTPUT FILE NAME:   <cc430x513x_uscia0_spi_09.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00008174
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000815e
 
 
 MEMORY CONFIGURATION
@@ -19,7 +19,7 @@ MEMORY CONFIGURATION
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
   RAM                   00001c00   00000ffe  00000052  00000fac  RWIX
-  FLASH                 00008000   00007f80  000001ae  00007dd2  RWIX
+  FLASH                 00008000   00007f80  00000198  00007de8  RWIX
   INT00                 0000ff80   00000002  00000000  00000002  RWIX
   INT01                 0000ff82   00000002  00000000  00000002  RWIX
   INT02                 0000ff84   00000002  00000000  00000002  RWIX
@@ -105,20 +105,20 @@ section   page    origin      length       input sections
                   00002bac    00000002     rts430x_lc_sd_eabi.lib : boot.obj (.stack)
                   00002bae    0000004e     --HOLE--
 
-.text      0    00008000    0000019c     
-                  00008000    00000088     cc430x513x_uscia0_spi_09.obj (.text:main)
-                  00008088    00000070     rts430x_lc_sd_eabi.lib : autoinit.obj (.text:_auto_init)
-                  000080f8    0000003e     cc430x513x_uscia0_spi_09.obj (.text:_isr:USCI_B0_ISR)
-                  00008136    0000003e     rts430x_lc_sd_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
-                  00008174    0000001a                            : boot.obj (.text:_isr:_c_int00_noexit)
-                  0000818e    00000006                            : isr_trap.obj (.text:__TI_ISR_TRAP)
-                  00008194    00000004                            : pre_init.obj (.text:_system_pre_init)
-                  00008198    00000004                            : exit.obj (.text:abort)
+.text      0    00008000    00000186     
+                  00008000    0000008a     cc430x513x_uscia0_spi_09.obj (.text:main)
+                  0000808a    00000070     rts430x_lc_sd_eabi.lib : autoinit.obj (.text:_auto_init)
+                  000080fa    0000003e                            : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  00008138    00000026     cc430x513x_uscia0_spi_09.obj (.text:_isr:USCI_B0_ISR)
+                  0000815e    0000001a     rts430x_lc_sd_eabi.lib : boot.obj (.text:_isr:_c_int00_noexit)
+                  00008178    00000006                            : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  0000817e    00000004                            : pre_init.obj (.text:_system_pre_init)
+                  00008182    00000004                            : exit.obj (.text:abort)
 
-.cinit     0    0000819c    00000012     
-                  0000819c    00000006     (.cinit..bss.load) [load image, compression = zero_init]
-                  000081a2    00000004     (__TI_handler_table)
-                  000081a6    00000008     (__TI_cinit_table)
+.cinit     0    00008186    00000012     
+                  00008186    00000006     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000818c    00000004     (__TI_handler_table)
+                  00008190    00000008     (__TI_cinit_table)
 
 AES        0    0000ffda    00000002     
                   0000ffda    00000002     rts430x_lc_sd_eabi.lib : int45.obj (.int45)
@@ -181,13 +181,13 @@ SYSNMI     0    0000fffc    00000002
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 000081a6 records: 1, size/record: 8, table size: 8
-	.bss: load addr=0000819c, load size=00000006 bytes, run addr=00001c00, run size=00000002 bytes, compression=zero_init
+__TI_cinit_table @ 00008190 records: 1, size/record: 8, table size: 8
+	.bss: load addr=00008186, load size=00000006 bytes, run addr=00001c00, run size=00000002 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 000081a2 records: 1, size/record: 4, table size: 4
+__TI_handler_table @ 0000818c records: 1, size/record: 4, table size: 4
 	index: 0, handler: __TI_zero_init
 
 
@@ -292,7 +292,7 @@ address    name
 000009c4   AESASTAT
 000009c5   AESASTAT_H
 000009c4   AESASTAT_L
-00008198   C$$EXIT
+00008182   C$$EXIT
 000008c0   CBCTL0
 000008c1   CBCTL0_H
 000008c0   CBCTL0_L
@@ -825,19 +825,19 @@ address    name
 00000170   UCSCTL8
 00000171   UCSCTL8_H
 00000170   UCSCTL8_L
-000080f8   USCI_B0_ISR
+00008138   USCI_B0_ISR
 0000015c   WDTCTL
 0000015d   WDTCTL_H
 0000015c   WDTCTL_L
 00002bfc   __STACK_END
 00000050   __STACK_SIZE
-000081a6   __TI_CINIT_Base
-000081ae   __TI_CINIT_Limit
-000081a2   __TI_Handler_Table_Base
-000081a6   __TI_Handler_Table_Limit
+00008190   __TI_CINIT_Base
+00008198   __TI_CINIT_Limit
+0000818c   __TI_Handler_Table_Base
+00008190   __TI_Handler_Table_Limit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
-0000818e   __TI_ISR_TRAP
+00008178   __TI_ISR_TRAP
 00000001   __TI_args_main
 00000001   __TI_exit
 0000ffda   __TI_int45
@@ -857,16 +857,16 @@ UNDEFED    __TI_INITARRAY_Limit
 0000fff8   __TI_int60
 0000fffa   __TI_int61
 0000fffc   __TI_int62
-00008136   __TI_zero_init
+000080fa   __TI_zero_init
 ffffffff   __binit__
 ffffffff   __c_args__
-00008088   _auto_init
-00008174   _c_int00
-00008174   _c_int00_noexit
+0000808a   _auto_init
+0000815e   _c_int00
+0000815e   _c_int00_noexit
 0000fffe   _reset_vector
 00002bac   _stack
-00008194   _system_pre_init
-00008198   abort
+0000817e   _system_pre_init
+00008182   abort
 ffffffff   binit
 00008000   main
 
@@ -1513,19 +1513,19 @@ address    name
 00002bac   _stack
 00002bfc   __STACK_END
 00008000   main
-00008088   _auto_init
-000080f8   USCI_B0_ISR
-00008136   __TI_zero_init
-00008174   _c_int00
-00008174   _c_int00_noexit
-0000818e   __TI_ISR_TRAP
-00008194   _system_pre_init
-00008198   C$$EXIT
-00008198   abort
-000081a2   __TI_Handler_Table_Base
-000081a6   __TI_CINIT_Base
-000081a6   __TI_Handler_Table_Limit
-000081ae   __TI_CINIT_Limit
+0000808a   _auto_init
+000080fa   __TI_zero_init
+00008138   USCI_B0_ISR
+0000815e   _c_int00
+0000815e   _c_int00_noexit
+00008178   __TI_ISR_TRAP
+0000817e   _system_pre_init
+00008182   C$$EXIT
+00008182   abort
+0000818c   __TI_Handler_Table_Base
+00008190   __TI_CINIT_Base
+00008190   __TI_Handler_Table_Limit
+00008198   __TI_CINIT_Limit
 0000ffda   __TI_int45
 0000ffdc   __TI_int46
 0000ffe0   __TI_int48

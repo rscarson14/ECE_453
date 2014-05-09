@@ -2,40 +2,6 @@
 **** Build of configuration Debug for project Armband ****
 
 "C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 152: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 243: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 245: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 246: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 247: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 248: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 249: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 250: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 252: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 253: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 254: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 257: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 279: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 344: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 346: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 406: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 407: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 422: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 136: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-"../cc430x513x_adc12_06.c", line 141: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../cc430x513x_adc12_06.c'
-' '
-'Building target: Armband.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z -m"Armband.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Armband_linkInfo.xml" --rom_model -o "Armband.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./cc430x513x_adc12_06.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-'Finished building target: Armband.out'
-' '
+gmake: Nothing to be done for `all'.
 
 **** Build Finished ****

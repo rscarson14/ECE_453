@@ -62,6 +62,7 @@ unsigned int i = 0;
 
 unsigned char transmitting = 0; 
 unsigned char receiving = 0; 
+volatile int second = 0;
 
 char str[100];
 
@@ -271,14 +272,17 @@ __interrupt void CC1101_ISR(void)
       {
         // Read the length byte from the FIFO       
         RxBufferLength = ReadSingleReg( RXBYTES );               
-        ReadBurstReg(RF_RXFIFORD, RxBuffer, RxBufferLength); 
+        ReadBurstReg(RF_RXFIFORD,(unsigned char *) RxBuffer, RxBufferLength);
         
         // Stop here to see contents of RxBuffer
         __no_operation();
-
-       // sprintf(str, "Active: %x\n\r", RxBuffer[PACKET_LEN-2]);
-        //sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
-       // uart_puts(str);
+        /*
+        if (RxBuffer[PACKET_LEN-2] != 0x00) {
+        	 sprintf(str, "Active: %x\n\r", RxBuffer[PACKET_LEN-2]);
+        	 //sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
+        	 uart_puts(str);
+        }
+		*/
         
         // Check the CRC results
         if(RxBuffer[CRC_LQI_IDX] & CRC_OK)  
@@ -318,7 +322,20 @@ __interrupt void USCI_B0_ISR(void)
 
      //MST_Data = 0x04;                      // Increment data
      // SLV_Data++;
-      UCB0TXBUF = RxBuffer[PACKET_LEN-2];                 // Send next value
+ //     if(second == 0) {
+    	  UCB0TXBUF = RxBuffer[PACKET_LEN-2];
+ //   	  sprintf(str, "Active: %x\n\r", RxBuffer[PACKET_LEN-2], RxBuffer[PACKET_LEN-1]);
+    	          //sprintf(str, "x value: %d    y value: %d    z value: %d    flex: %d    EMG: %d\n\r", results[0], results[1], results[3], results[2], results[4]);
+ //         uart_puts(str);
+ //   	  second = 1;
+ //     }else {
+ //   	  UCB0TXBUF = RxBuffer[PACKET_LEN-1];
+ //   	  second = 0;
+ //     }
+                   // Send next value
+
+     // while (!(UCB0IFG&UCTXIFG));           // USCI_A0 TX buffer ready?
+     //
 
       // Send 0x12 == 0001 0010  Receive 0x24 == 0010 0100
       // Send 0x24 == 0010 0100  Receive 0x84 == 1000 0100

@@ -1,775 +1,33 @@
 
-**** Clean-only build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k clean 
-DEL /F  "Armband.out"
-Could Not Find C:\Users\Greg\Armband_Repo\ECE_453\CC430_Code\Armband\Debug\Armband.out
-DEL /F "cc430x513x_adc12_06.pp" 
-DEL /F "cc430x513x_adc12_06.obj" 
-'Finished clean'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 118: error #20: identifier "PACKET_LEN" is undefined
-"../cc430x513x_adc12_06.c", line 134: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 150: warning #225-D: function "WriteRfSettings" declared implicitly
-"../cc430x513x_adc12_06.c", line 150: error #20: identifier "rfSettings" is undefined
-"../cc430x513x_adc12_06.c", line 152: warning #225-D: function "WriteSinglePATable" declared implicitly
-"../cc430x513x_adc12_06.c", line 164: warning #225-D: function "SetVCore" declared implicitly
-"../cc430x513x_adc12_06.c", line 166: warning #225-D: function "ResetRadioCore" declared implicitly
-"../cc430x513x_adc12_06.c", line 266: warning #225-D: function "Transmit" declared implicitly
-"../cc430x513x_adc12_06.c", line 267: error #20: identifier "transmitting" is undefined
-"../cc430x513x_adc12_06.c", line 225: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 227: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 228: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 229: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 230: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 231: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 232: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 234: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 235: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 236: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 237: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 238: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 239: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 261: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 326: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 328: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 336: error #161: declaration is incompatible with previous "Transmit" (declared at line 266)
-"../cc430x513x_adc12_06.c", line 342: warning #225-D: function "WriteBurstReg" declared implicitly
-"../cc430x513x_adc12_06.c", line 344: warning #225-D: function "Strobe" declared implicitly
-"../cc430x513x_adc12_06.c", line 354: warning #225-D: function "Strobe" declared implicitly
-"../cc430x513x_adc12_06.c", line 365: warning #225-D: function "Strobe" declared implicitly
-"../cc430x513x_adc12_06.c", line 385: error #20: identifier "receiving" is undefined
-"../cc430x513x_adc12_06.c", line 388: error #20: identifier "RxBufferLength" is undefined
-"../cc430x513x_adc12_06.c", line 388: warning #225-D: function "ReadSingleReg" declared implicitly
-"../cc430x513x_adc12_06.c", line 389: warning #225-D: function "ReadBurstReg" declared implicitly
-"../cc430x513x_adc12_06.c", line 389: error #20: identifier "RxBuffer" is undefined
-"../cc430x513x_adc12_06.c", line 398: error #20: identifier "transmitting" is undefined
-"../cc430x513x_adc12_06.c", line 389: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 404: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-
-"../cc430x513x_adc12_06.c", line 118: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
->> Compilation failure
-8 errors detected in the compilation of "../cc430x513x_adc12_06.c".
-gmake: *** [cc430x513x_adc12_06.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 86: fatal error #1965: cannot open source file "RF1A.h"
-1 catastrophic error detected in the compilation of "../cc430x513x_adc12_06.c".
-Compilation terminated.
-
->> Compilation failure
-gmake: *** [cc430x513x_adc12_06.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 86: fatal error #1965: cannot open source file "RF1A.h"
-1 catastrophic error detected in the compilation of "../cc430x513x_adc12_06.c".
-Compilation terminated.
-
-gmake: *** [cc430x513x_adc12_06.obj] Error 1
->> Compilation failure
-'Building file: ../HAL/HAL_PMM.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/HAL_PMM.pp" --obj_directory="HAL"  "../HAL/HAL_PMM.c"
-"../HAL/HAL_PMM.c", line 77: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 89: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 104: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 116: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 143: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 189: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 219: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-'Finished building: ../HAL/HAL_PMM.c'
-' '
-'Building file: ../HAL/RF1A.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RF1A.pp" --obj_directory="HAL"  "../HAL/RF1A.c"
-"../HAL/RF1A.c", line 22: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 43: remark #1528-D: (ULP 3.1) Detected flag polling using RFSTATIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 36: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../HAL/RF1A.c", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-"../HAL/RF1A.c", line 72: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 87: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 108: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 113: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 111: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 111: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
-"../HAL/RF1A.c", line 117: remark #2553-D: (ULP 14.1) Array index (involving "count") of type "int". Recommend using "unsigned int"
-"../HAL/RF1A.c", line 135: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 141: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 138: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 211: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 214: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 229: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 235: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 239: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 232: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-'Finished building: ../HAL/RF1A.c'
-' '
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 143: fatal error #35: #error directive: "Please select MHZ_868 or MHZ_915 as the active project configuration" 
-1 catastrophic error detected in the compilation of "../HAL/RfRegSettings.c".
-Compilation terminated.
-
->> Compilation failure
-gmake: *** [HAL/RfRegSettings.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 129: error #20: identifier "PACKET_LEN" is undefined
-"../cc430x513x_adc12_06.c", line 145: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 161: error #20: identifier "rfSettings" is undefined
-"../cc430x513x_adc12_06.c", line 278: error #20: identifier "transmitting" is undefined
-"../cc430x513x_adc12_06.c", line 236: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 238: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 239: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 240: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 241: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 242: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 243: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 245: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 246: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 247: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 248: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 249: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 250: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 272: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 337: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 339: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 396: error #20: identifier "receiving" is undefined
-"../cc430x513x_adc12_06.c", line 399: error #20: identifier "RxBufferLength" is undefined
-"../cc430x513x_adc12_06.c", line 400: error #20: identifier "RxBuffer" is undefined
-"../cc430x513x_adc12_06.c", line 409: error #20: identifier "transmitting" is undefined
-"../cc430x513x_adc12_06.c", line 400: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 415: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 129: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-7 errors detected in the compilation of "../cc430x513x_adc12_06.c".
-
->> Compilation failure
-gmake: *** [cc430x513x_adc12_06.obj] Error 1
-'Building file: ../HAL/HAL_PMM.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/HAL_PMM.pp" --obj_directory="HAL"  "../HAL/HAL_PMM.c"
-"../HAL/HAL_PMM.c", line 77: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 89: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 104: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 116: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 143: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 189: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 219: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-'Finished building: ../HAL/HAL_PMM.c'
-' '
-'Building file: ../HAL/RF1A.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RF1A.pp" --obj_directory="HAL"  "../HAL/RF1A.c"
-"../HAL/RF1A.c", line 22: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 43: remark #1528-D: (ULP 3.1) Detected flag polling using RFSTATIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 36: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../HAL/RF1A.c", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-"../HAL/RF1A.c", line 72: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 87: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 108: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 113: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 111: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 111: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
-"../HAL/RF1A.c", line 117: remark #2553-D: (ULP 14.1) Array index (involving "count") of type "int". Recommend using "unsigned int"
-"../HAL/RF1A.c", line 135: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 141: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 138: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 211: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 214: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 229: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 235: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 239: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 232: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-'Finished building: ../HAL/RF1A.c'
-' '
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 143: fatal error #35: #error directive: "Please select MHZ_868 or MHZ_915 as the active project configuration" 
-1 catastrophic error detected in the compilation of "../HAL/RfRegSettings.c".
-
->> Compilation failure
-Compilation terminated.
-gmake: *** [HAL/RfRegSettings.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 146: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 162: error #20: identifier "rfSettings" is undefined
-"../cc430x513x_adc12_06.c", line 279: error #20: identifier "transmitting" is undefined
-"../cc430x513x_adc12_06.c", line 237: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 239: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 240: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 241: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 242: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 243: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 244: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 246: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 247: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 248: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 249: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 250: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 251: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 273: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 338: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 340: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 397: error #20: identifier "receiving" is undefined
-"../cc430x513x_adc12_06.c", line 400: error #20: identifier "RxBufferLength" is undefined
-"../cc430x513x_adc12_06.c", line 401: error #20: identifier "RxBuffer" is undefined
-"../cc430x513x_adc12_06.c", line 410: error #20: identifier "transmitting" is undefined
-"../cc430x513x_adc12_06.c", line 401: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-
->> Compilation failure
-"../cc430x513x_adc12_06.c", line 416: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 134: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-6 errors detected in the compilation of "../cc430x513x_adc12_06.c".
-gmake: *** [cc430x513x_adc12_06.obj] Error 1
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 143: fatal error #35: #error directive: "Please select MHZ_868 or MHZ_915 as the active project configuration" 
-1 catastrophic error detected in the compilation of "../HAL/RfRegSettings.c".
-Compilation terminated.
-
->> Compilation failure
-gmake: *** [HAL/RfRegSettings.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 147: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 163: error #20: identifier "rfSettings" is undefined
-"../cc430x513x_adc12_06.c", line 238: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 240: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 241: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 242: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 243: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 244: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 245: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 247: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 248: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 249: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 250: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 251: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 252: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 274: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 339: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 341: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 401: error #20: identifier "RxBufferLength" is undefined
-"../cc430x513x_adc12_06.c", line 402: error #20: identifier "RxBuffer" is undefined
-"../cc430x513x_adc12_06.c", line 402: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 417: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 134: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-
-"../cc430x513x_adc12_06.c", line 137: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-3 errors detected in the compilation of "../cc430x513x_adc12_06.c".
->> Compilation failure
-gmake: *** [cc430x513x_adc12_06.obj] Error 1
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 143: fatal error #35: #error directive: "Please select MHZ_868 or MHZ_915 as the active project configuration" 
-1 catastrophic error detected in the compilation of "../HAL/RfRegSettings.c".
-Compilation terminated.
-
->> Compilation failure
-gmake: *** [HAL/RfRegSettings.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 149: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 240: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 242: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 243: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 244: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 245: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 246: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 247: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 249: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 250: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 251: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 252: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 253: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 254: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 276: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 341: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 343: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 403: error #20: identifier "RxBufferLength" is undefined
-"../cc430x513x_adc12_06.c", line 404: error #20: identifier "RxBuffer" is undefined
-"../cc430x513x_adc12_06.c", line 404: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 419: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 136: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-"../cc430x513x_adc12_06.c", line 139: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-
-2 errors detected in the compilation of "../cc430x513x_adc12_06.c".
->> Compilation failure
-gmake: *** [cc430x513x_adc12_06.obj] Error 1
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 143: fatal error #35: #error directive: "Please select MHZ_868 or MHZ_915 as the active project configuration" 
-1 catastrophic error detected in the compilation of "../HAL/RfRegSettings.c".
-Compilation terminated.
-
->> Compilation failure
-gmake: *** [HAL/RfRegSettings.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 151: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 242: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 244: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 245: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 246: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 247: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 248: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 249: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 251: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 252: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 253: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 254: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 278: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 343: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 345: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 405: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 406: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 421: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 136: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-"../cc430x513x_adc12_06.c", line 141: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../cc430x513x_adc12_06.c'
-' '
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 143: fatal error #35: #error directive: "Please select MHZ_868 or MHZ_915 as the active project configuration" 
-1 catastrophic error detected in the compilation of "../HAL/RfRegSettings.c".
-Compilation terminated.
-
->> Compilation failure
-gmake: *** [HAL/RfRegSettings.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
 **** Build of configuration Debug for project Armband ****
 
 "C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
 'Building file: ../cc430x513x_adc12_06.c'
 'Invoking: MSP430 Compiler'
 "C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 151: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 242: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 244: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 245: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 246: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 247: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 248: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 249: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 251: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 252: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 253: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 254: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 278: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 343: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 345: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 405: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 406: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 421: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 136: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-"../cc430x513x_adc12_06.c", line 141: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../cc430x513x_adc12_06.c'
-' '
-'Building file: ../HAL/HAL_PMM.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/HAL_PMM.pp" --obj_directory="HAL"  "../HAL/HAL_PMM.c"
-"../HAL/HAL_PMM.c", line 77: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 89: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 104: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 116: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 143: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 189: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 219: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-'Finished building: ../HAL/HAL_PMM.c'
-' '
-'Building file: ../HAL/RF1A.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RF1A.pp" --obj_directory="HAL"  "../HAL/RF1A.c"
-"../HAL/RF1A.c", line 22: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 43: remark #1528-D: (ULP 3.1) Detected flag polling using RFSTATIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 36: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../HAL/RF1A.c", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-"../HAL/RF1A.c", line 72: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 87: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 108: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 113: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 111: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 111: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
-"../HAL/RF1A.c", line 117: remark #2553-D: (ULP 14.1) Array index (involving "count") of type "int". Recommend using "unsigned int"
-"../HAL/RF1A.c", line 135: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 141: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 138: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 211: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 214: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 229: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 235: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 239: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 232: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-'Finished building: ../HAL/RF1A.c'
-' '
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 102: remark #1535-D: (ULP 8.1) variable "rfSettings" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../HAL/RfRegSettings.c'
-' '
-'Building target: Armband.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z -m"Armband.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Armband_linkInfo.xml" --rom_model -o "Armband.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "../MHZ_868/HAL/RfRegSettings.obj" "../MHZ_868/HAL/RF1A.obj" "../MHZ_868/HAL/HAL_PMM.obj" "../MHZ_868/RF_Toggle_LED_Demo.obj" "./cc430x513x_adc12_06.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-error #10056: symbol "rfSettings" redefined: first defined in "./HAL/RfRegSettings.obj"; redefined in "../MHZ_868/HAL/RfRegSettings.obj"
-error #10056: symbol "WriteRfSettings" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "Strobe" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "WriteSingleReg" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "WriteSinglePATable" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "WriteBurstPATable" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "ReadSingleReg" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "WriteBurstReg" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "ReadBurstReg" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "ResetRadioCore" redefined: first defined in "./HAL/RF1A.obj"; redefined in "../MHZ_868/HAL/RF1A.obj"
-error #10056: symbol "SetVCore" redefined: first defined in "./HAL/HAL_PMM.obj"; redefined in "../MHZ_868/HAL/HAL_PMM.obj"
-error #10056: symbol "Transmit" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "CC1101_ISR" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "transmitting" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "receiving" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "__TI_int53" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "RxBufferLength" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "TxBuffer" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "main" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-
-error #10056: symbol "InitRadio" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
->> Compilation failure
-error #10056: symbol "ReceiveOn" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10056: symbol "ReceiveOff" redefined: first defined in "../MHZ_868/RF_Toggle_LED_Demo.obj"; redefined in "./cc430x513x_adc12_06.obj"
-error #10010: errors encountered during linking; "Armband.out" not built
-gmake: *** [Armband.out] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building target: Armband.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z -m"Armband.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Armband_linkInfo.xml" --rom_model -o "Armband.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./cc430x513x_adc12_06.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-'Finished building target: Armband.out'
-' '
-
-**** Build Finished ****
-
-**** Clean-only build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k clean 
-DEL /F  "Fixed_LT_FIFO.out"
-DEL /F "RF_Toggle_LED_Demo.pp" "HAL\HAL_PMM.pp" "HAL\RF1A.pp" "HAL\RfRegSettings.pp" 
-DEL /F "RF_Toggle_LED_Demo.obj" "HAL\HAL_PMM.obj" "HAL\RF1A.obj" "HAL\RfRegSettings.obj" 
-'Finished clean'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 44: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 238: warning #225-D: function "sprintf" declared implicitly
-"../RF_Toggle_LED_Demo.c", line 238: error #20: identifier "str" is undefined
-"../RF_Toggle_LED_Demo.c", line 232: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 233: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 238: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 238: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 240: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 252: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 59: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-1 error detected in the compilation of "../RF_Toggle_LED_Demo.c".
-
->> Compilation failure
-gmake: *** [RF_Toggle_LED_Demo.obj] Error 1
-'Building file: ../HAL/HAL_PMM.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/HAL_PMM.pp" --obj_directory="HAL"  "../HAL/HAL_PMM.c"
-"../HAL/HAL_PMM.c", line 77: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 89: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 104: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 116: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 143: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 189: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/HAL_PMM.c", line 219: remark #1528-D: (ULP 3.1) Detected flag polling using PMMIFG. Recommend using an interrupt combined with enter LPMx and ISR
-'Finished building: ../HAL/HAL_PMM.c'
-' '
-'Building file: ../HAL/RF1A.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RF1A.pp" --obj_directory="HAL"  "../HAL/RF1A.c"
-"../HAL/RF1A.c", line 22: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 43: remark #1528-D: (ULP 3.1) Detected flag polling using RFSTATIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 36: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../HAL/RF1A.c", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-"../HAL/RF1A.c", line 72: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 87: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 108: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 113: remark #1528-D: (ULP 3.1) Detected flag polling using RFDOUTIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 111: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 111: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
-"../HAL/RF1A.c", line 117: remark #2553-D: (ULP 14.1) Array index (involving "count") of type "int". Recommend using "unsigned int"
-"../HAL/RF1A.c", line 135: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 141: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 138: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../HAL/RF1A.c", line 211: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 214: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 229: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 235: remark #1528-D: (ULP 3.1) Detected flag polling using RFDINIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 239: remark #1528-D: (ULP 3.1) Detected flag polling using RFINSTRIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../HAL/RF1A.c", line 232: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-'Finished building: ../HAL/RF1A.c'
-' '
-'Building file: ../HAL/RfRegSettings.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="HAL/RfRegSettings.pp" --obj_directory="HAL"  "../HAL/RfRegSettings.c"
-"../HAL/RfRegSettings.c", line 102: remark #1535-D: (ULP 8.1) variable "rfSettings" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../HAL/RfRegSettings.c'
-' '
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 44: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 240: warning #225-D: function "sprintf" declared implicitly
-"../RF_Toggle_LED_Demo.c", line 242: error #169: argument of type "volatile char *" is incompatible with parameter of type "const char *"
-"../RF_Toggle_LED_Demo.c", line 234: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 235: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 240: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 240: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 254: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-
->> Compilation failure
-"../RF_Toggle_LED_Demo.c", line 59: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-1 error detected in the compilation of "../RF_Toggle_LED_Demo.c".
-gmake: *** [RF_Toggle_LED_Demo.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 44: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 240: warning #225-D: function "sprintf" declared implicitly
-"../RF_Toggle_LED_Demo.c", line 242: error #169: argument of type "volatile char *" is incompatible with parameter of type "const char *"
-"../RF_Toggle_LED_Demo.c", line 234: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 235: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 240: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 240: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 254: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 59: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-
-1 error detected in the compilation of "../RF_Toggle_LED_Demo.c".
->> Compilation failure
-gmake: *** [RF_Toggle_LED_Demo.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 242: error #169: argument of type "volatile char *" is incompatible with parameter of type "char *"
-"../RF_Toggle_LED_Demo.c", line 244: error #169: argument of type "volatile char *" is incompatible with parameter of type "const char *"
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-
-2 errors detected in the compilation of "../RF_Toggle_LED_Demo.c".
->> Compilation failure
-gmake: *** [RF_Toggle_LED_Demo.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 242: error #169: argument of type "volatile char *" is incompatible with parameter of type "char *"
-"../RF_Toggle_LED_Demo.c", line 244: error #169: argument of type "volatile char *" is incompatible with parameter of type "const char *"
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-2 errors detected in the compilation of "../RF_Toggle_LED_Demo.c".
->> Compilation failure
-gmake: *** [RF_Toggle_LED_Demo.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../RF_Toggle_LED_Demo.c'
-' '
-'Building target: Fixed_LT_FIFO.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=80 -m"Fixed_LT_FIFO.map" --heap_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --xml_link_info="Fixed_LT_FIFO_linkInfo.xml" --rom_model -o "Fixed_LT_FIFO.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./RF_Toggle_LED_Demo.obj" "../lnk_cc430f5137.cmd" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-'Finished building target: Fixed_LT_FIFO.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Armband ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_adc12_06.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
-"../cc430x513x_adc12_06.c", line 152: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 243: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../cc430x513x_adc12_06.c", line 245: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 246: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 247: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 248: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 249: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 250: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
-"../cc430x513x_adc12_06.c", line 252: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 253: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 254: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 257: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 279: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../cc430x513x_adc12_06.c", line 344: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 346: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_adc12_06.c", line 406: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 407: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../cc430x513x_adc12_06.c", line 422: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../cc430x513x_adc12_06.c", line 136: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-"../cc430x513x_adc12_06.c", line 141: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_adc12_06.c", line 161: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 186: warning #179-D: variable "str" was declared but never referenced
+"../cc430x513x_adc12_06.c", line 256: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../cc430x513x_adc12_06.c", line 258: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 259: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 260: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 261: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 262: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 263: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 266: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 267: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 268: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 269: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 270: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 478: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 480: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 540: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../cc430x513x_adc12_06.c", line 541: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../cc430x513x_adc12_06.c", line 556: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../cc430x513x_adc12_06.c", line 145: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_adc12_06.c", line 150: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_adc12_06.c", line 182: remark #1535-D: (ULP 8.1) variable "debounce" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
 'Finished building: ../cc430x513x_adc12_06.c'
 ' '
 'Building target: Armband.out'
@@ -783,218 +41,100 @@ remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recomm
 
 **** Build Finished ****
 
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
+**** Build of configuration Debug for project Armband ****
 
 "C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
+'Building file: ../cc430x513x_adc12_06.c'
 'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 244: warning #169-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../RF_Toggle_LED_Demo.c'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
+"../cc430x513x_adc12_06.c", line 161: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 186: warning #179-D: variable "str" was declared but never referenced
+"../cc430x513x_adc12_06.c", line 256: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../cc430x513x_adc12_06.c", line 258: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 259: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 260: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 261: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 262: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 263: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 266: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 267: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 268: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 269: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 270: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 478: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 480: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 540: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../cc430x513x_adc12_06.c", line 541: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../cc430x513x_adc12_06.c", line 556: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../cc430x513x_adc12_06.c", line 145: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_adc12_06.c", line 150: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_adc12_06.c", line 182: remark #1535-D: (ULP 8.1) variable "debounce" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: ../cc430x513x_adc12_06.c'
 ' '
-'Building target: Fixed_LT_FIFO.out'
+'Building target: Armband.out'
 'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=80 -m"Fixed_LT_FIFO.map" --heap_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --xml_link_info="Fixed_LT_FIFO_linkInfo.xml" --rom_model -o "Fixed_LT_FIFO.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./RF_Toggle_LED_Demo.obj" "../lnk_cc430f5137.cmd" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-'Finished building target: Fixed_LT_FIFO.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 244: warning #169-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../RF_Toggle_LED_Demo.c'
-' '
-'Building target: Fixed_LT_FIFO.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=80 -m"Fixed_LT_FIFO.map" --heap_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --xml_link_info="Fixed_LT_FIFO_linkInfo.xml" --rom_model -o "Fixed_LT_FIFO.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./RF_Toggle_LED_Demo.obj" "../lnk_cc430f5137.cmd" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-'Finished building target: Fixed_LT_FIFO.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../RF_Toggle_LED_Demo.c'
-' '
-'Building target: Fixed_LT_FIFO.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=80 -m"Fixed_LT_FIFO.map" --heap_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --xml_link_info="Fixed_LT_FIFO_linkInfo.xml" --rom_model -o "Fixed_LT_FIFO.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./RF_Toggle_LED_Demo.obj" "../lnk_cc430f5137.cmd" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-'Finished building target: Fixed_LT_FIFO.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../RF_Toggle_LED_Demo.c'
-' '
-'Building target: Fixed_LT_FIFO.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=80 -m"Fixed_LT_FIFO.map" --heap_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --xml_link_info="Fixed_LT_FIFO_linkInfo.xml" --rom_model -o "Fixed_LT_FIFO.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./RF_Toggle_LED_Demo.obj" "../lnk_cc430f5137.cmd" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-'Finished building target: Fixed_LT_FIFO.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration MHZ_868 for project Fixed_LT_FIFO ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../RF_Toggle_LED_Demo.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Fixed_LT_FIFO/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="RF_Toggle_LED_Demo.pp"  "../RF_Toggle_LED_Demo.c"
-"../RF_Toggle_LED_Demo.c", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../RF_Toggle_LED_Demo.c", line 236: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 237: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 242: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../RF_Toggle_LED_Demo.c", line 242: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function sprintf. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 244: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function uart_puts. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../RF_Toggle_LED_Demo.c", line 256: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../RF_Toggle_LED_Demo.c", line 61: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
-'Finished building: ../RF_Toggle_LED_Demo.c'
-' '
-'Building target: Fixed_LT_FIFO.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi -g --advice:power=all --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=80 -m"Fixed_LT_FIFO.map" --heap_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --xml_link_info="Fixed_LT_FIFO_linkInfo.xml" --rom_model -o "Fixed_LT_FIFO.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./RF_Toggle_LED_Demo.obj" "../lnk_cc430f5137.cmd" -l"libc.a" 
-<Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project.
-   Recommend initializing all unused ports to eliminate wasted current
-   consumption on unused pins.
-'Finished building target: Fixed_LT_FIFO.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project cc430x513x_uscia0_spi_09 ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_uscia0_spi_09.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_uscia0_spi_09.pp"  "../cc430x513x_uscia0_spi_09.c"
-"../cc430x513x_uscia0_spi_09.c", line 112: error #20: identifier "UCB0MCTL" is undefined
-"../cc430x513x_uscia0_spi_09.c", line 124: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_uscia0_spi_09.c", line 119: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-"../cc430x513x_uscia0_spi_09.c", line 137: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-
-"../cc430x513x_uscia0_spi_09.c", line 148: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
->> Compilation failure
-1 error detected in the compilation of "../cc430x513x_uscia0_spi_09.c".
-gmake: *** [cc430x513x_uscia0_spi_09.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project cc430x513x_uscia0_spi_09 ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_uscia0_spi_09.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_uscia0_spi_09.pp"  "../cc430x513x_uscia0_spi_09.c"
-"../cc430x513x_uscia0_spi_09.c", line 112: error #20: identifier "UCB1MCTL" is undefined
-"../cc430x513x_uscia0_spi_09.c", line 124: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_uscia0_spi_09.c", line 119: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-"../cc430x513x_uscia0_spi_09.c", line 137: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-
-"../cc430x513x_uscia0_spi_09.c", line 148: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
->> Compilation failure
-1 error detected in the compilation of "../cc430x513x_uscia0_spi_09.c".
-gmake: *** [cc430x513x_uscia0_spi_09.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project cc430x513x_uscia0_spi_09 ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../cc430x513x_uscia0_spi_09.c'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_uscia0_spi_09.pp"  "../cc430x513x_uscia0_spi_09.c"
-"../cc430x513x_uscia0_spi_09.c", line 124: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_uscia0_spi_09.c", line 119: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-"../cc430x513x_uscia0_spi_09.c", line 137: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_uscia0_spi_09.c", line 148: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
-'Finished building: ../cc430x513x_uscia0_spi_09.c'
-' '
-'Building target: cc430x513x_uscia0_spi_09.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__CC430F5137__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z -m"cc430x513x_uscia0_spi_09.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="cc430x513x_uscia0_spi_09_linkInfo.xml" --rom_model -o "cc430x513x_uscia0_spi_09.out"  "./cc430x513x_uscia0_spi_09.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z -m"Armband.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Armband_linkInfo.xml" --rom_model -o "Armband.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./cc430x513x_adc12_06.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 
 <Linking>
 remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
 remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-'Finished building target: cc430x513x_uscia0_spi_09.out'
+'Finished building target: Armband.out'
 ' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Armband ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Armband ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../cc430x513x_adc12_06.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/Greg/Armband_Repo/ECE_453/CC430_Code/Armband/HAL" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="cc430x513x_adc12_06.pp"  "../cc430x513x_adc12_06.c"
+"../cc430x513x_adc12_06.c", line 161: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 186: warning #179-D: variable "str" was declared but never referenced
+"../cc430x513x_adc12_06.c", line 256: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../cc430x513x_adc12_06.c", line 258: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 259: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 260: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 261: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 262: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 263: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../cc430x513x_adc12_06.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 266: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 267: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 268: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 269: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 270: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../cc430x513x_adc12_06.c", line 478: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 480: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../cc430x513x_adc12_06.c", line 540: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadSingleReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../cc430x513x_adc12_06.c", line 541: remark #1538-D: (ULP 10.1) ISR CC1101_ISR calls function ReadBurstReg. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../cc430x513x_adc12_06.c", line 556: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../cc430x513x_adc12_06.c", line 145: remark #1535-D: (ULP 8.1) variable "TxBuffer" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_adc12_06.c", line 150: remark #1535-D: (ULP 8.1) variable "receiving" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_adc12_06.c", line 182: remark #1535-D: (ULP 8.1) variable "debounce" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: ../cc430x513x_adc12_06.c'
+' '
+'Building target: Armband.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__CC430F5137__ --define=MHZ_868 --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z -m"Armband.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Armband_linkInfo.xml" --rom_model -o "Armband.out"  "./HAL/RfRegSettings.obj" "./HAL/RF1A.obj" "./HAL/HAL_PMM.obj" "./cc430x513x_adc12_06.obj" "../lnk_cc430f5137.cmd" -l"libmath.a" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: Armband.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Armband ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
 
 **** Build Finished ****

@@ -8,7 +8,9 @@
 "../cc430x513x_uscia0_spi_09.c", line 124: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
 "../cc430x513x_uscia0_spi_09.c", line 119: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
 "../cc430x513x_uscia0_spi_09.c", line 137: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
-"../cc430x513x_uscia0_spi_09.c", line 148: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../cc430x513x_uscia0_spi_09.c", line 150: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../cc430x513x_uscia0_spi_09.c", line 83: remark #1535-D: (ULP 8.1) variable "MST_Data" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../cc430x513x_uscia0_spi_09.c", line 83: remark #1535-D: (ULP 8.1) variable "SLV_Data" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
 'Finished building: ../cc430x513x_uscia0_spi_09.c'
 ' '
 'Building target: cc430x513x_uscia0_spi_09.out'

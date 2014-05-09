@@ -119,7 +119,7 @@ int main(void)
   __delay_cycles(100);                      // Wait for slave to initialize
 
   MST_Data = 0x01;                          // Initialize data values
-  SLV_Data = 0x00;                          //
+  SLV_Data = 0x1F;                          //
 
   while (!(UCB0IFG&UCTXIFG));               // USCI_A0 TX buffer ready?
   UCB0TXBUF = MST_Data;                     // Transmit first character
@@ -136,14 +136,16 @@ __interrupt void USCI_B0_ISR(void)
     case 2:                                 // Vector 2 - RXIFG
       while (!(UCB0IFG&UCTXIFG));           // USCI_A0 TX buffer ready?
 
-      if (UCB0RXBUF==SLV_Data)              // Test for correct character RX'd
-        P2OUT |= BIT6;                      // If correct, light LED
-      else
-        P2OUT &= ~BIT6;                     // If incorrect, clear LED
+//      if (UCB0RXBUF==SLV_Data)              // Test for correct character RX'd
+//       P2OUT |= BIT6;                      // If correct, light LED
+//      else
+//       P2OUT &= ~BIT6;                     // If incorrect, clear LED
 
-      MST_Data++;                           // Increment data
-      SLV_Data++;
-      UCB0TXBUF = MST_Data;                 // Send next value
+      P2OUT ^= BIT6;
+
+  //    MST_Data++;                           // Increment data
+  //    SLV_Data++;
+      UCB0TXBUF = /*MST_Data*/0xAA;                 // Send next value
 
       __delay_cycles(40);                   // Add time between transmissions to
                                             // make sure slave can process information
